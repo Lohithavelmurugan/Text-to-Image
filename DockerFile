@@ -1,0 +1,16 @@
+
+FROM python:3.8-slim
+WORKDIR /app
+
+
+ADD . /app
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+ENV GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+
+EXPOSE 5000
+
+ENV FLASK_APP=app.py
+
+CMD ["python", "app.py"]

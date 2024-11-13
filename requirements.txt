@@ -1,0 +1,15 @@
+Flask
+flask-wtf
+wtforms
+pillow
+pytesseract
+gunicorn
+transformers
+torch
+spacy
+spacy-transformers
+opencv-python
+google-cloud-translate==3.0.2
+tesseract
+easyocr
+torch

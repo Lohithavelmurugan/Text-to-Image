@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Perform Named Entity Recognition</h1>
+<p>Click the button below to perform NER on the text.</p>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <p>{{ form.submit(class="btn") }}</p>
+</form>
+{% endblock %}

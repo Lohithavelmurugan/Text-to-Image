@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Image Text Extraction</h1>
+<form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.images.label }}<br>
+        {{ form.images(class="input-field") }}
+    </p>
+    <p>
+        {{ form.language.label }}<br>
+        {{ form.language(class="input-field") }}
+    </p>
+    <p>{{ form.submit(class="btn") }}</p>
+</form>
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to the OCR Application</h1>
+<p>Please select the functionality you want to use:</p>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <div class="radio-field">
+        {% for subfield in form.functionality %}
+            <label>{{ subfield() }} {{ subfield.label.text }}</label>
+        {% endfor %}
+    </div>
+    <p>{{ form.submit(class="btn") }}</p>
+</form>
+{% endblock %}
+

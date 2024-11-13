@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Translate Extracted Text</h1>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.target_language.label }}<br>
+        {{ form.target_language(class="input-field") }}
+    </p>
+    <p>{{ form.submit(class="btn") }}</p>
+</form>
+{% endblock %}

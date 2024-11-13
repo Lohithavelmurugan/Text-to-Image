@@ -1,0 +1,36 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+<h1>Results</h1>
+{% for item in texts %}
+    <h3>{{ item.filename }}</h3>
+    {% if item.text %}
+        <h4>Extracted Text:</h4>
+        <pre>{{ item.text }}</pre>
+    {% endif %}
+    {% if item.translated_text and functionality in ['translate', 'all'] %}
+        {% if item.translation_error %}
+            <p style="color: red;">Error translating text: {{ item.translation_error }}</p>
+        {% else %}
+            <h4>Translated Text:</h4>
+            <pre>{{ item.translated_text }}</pre>
+        {% endif %}
+    {% endif %}
+    {% if functionality in ['ner', 'all'] %}
+        {% if item.ner_error %}
+            <p style="color: red;">{{ item.ner_error }}</p>
+        {% elif item.entities and item.entities | length > 0 %}
+            <h4>Named Entities:</h4>
+            <ul>
+                {% for entity in item.entities %}
+                    <li><strong>{{ entity.label }}:</strong> {{ entity.text }} (Confidence: {{ entity.score | round(2) }})</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No named entities found in the text.</p>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+<a href="{{ url_for('main_routes.home') }}">Return Home</a>
+{% endblock %}

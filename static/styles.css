@@ -1,0 +1,171 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+nav {
+    background-color: #2d3e50;
+    padding: 1em;
+}
+
+nav a {
+    color: #fff;
+    margin-right: 1em;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h3, h4 {
+    color: #2d3e50;
+}
+
+.input-field, .radio-field select, .radio-field input[type="radio"] {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 0.7em 1.5em;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.alert {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+}
+
+.alert.success {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.alert.danger {
+    background-color: #F8D7DA;
+    color: #721C24;
+}
+
+.alert.info {
+    background-color: #D1ECF1;
+    color: #0C5460;
+}
+
+pre {
+    background-color: #f0f4f8;
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.95em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #e9ecef;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+.radio-field label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+}
+
+.radio-field input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #2d3e50;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Adjust Displacy styles for NER visualization */
+div.entity {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+span.entity {
+    padding: 0.25em 0.35em;
+    margin: 0 0.25em;
+    line-height: 1;
+    display: inline-block;
+    border-radius: 0.25em;
+    border: 1px solid #aaa;
+}
+
+span.entity:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+/* Colors for entity labels */
+.ent-PERSON {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.ent-ORG {
+    background: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.ent-GPE {
+    background: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.ent-DATE {
+    background: #fff3cd;
+    border-color: #ffeeba;
+}
+
+/* Add styles for other entity labels as needed */
+

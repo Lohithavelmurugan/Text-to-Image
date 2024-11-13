@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} - OCR Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('main_routes.home') }}">Home</a>
+    </nav>
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        &copy; {{ current_year }} OCR Application
+    </footer>
+</body>
+</html>
